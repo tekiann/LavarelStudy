@@ -8,18 +8,21 @@ use Illuminate\Http\Request;
 class ProdutosController extends Controller
 {
     public function create(){
-        return view('produtos.create');
+        $produtos = Produto::all();
+        return view('produtos.create',['produtos'=>$produtos]);
     }
     public function store(Request $request){
 
         Produto::create([
             'nome' => $request->nome,
-            'custo' => $request->custo,
+            'custo' => $request->preco * $request->quantidade,
             'preco' => $request->preco,
             'quantidade' => $request->quantidade,
         ]);
 
-        return "Produto Criado com Sucesso!";
+        $produtos = Produto::all();
+        return view('produtos.create',['produtos'=>$produtos]);
+
     }
     public function show($id){
         $produto = Produto::findOrFail($id);
@@ -35,22 +38,19 @@ class ProdutosController extends Controller
 
         $produto->update([
             'nome' => $request->nome,
-            'custo' => $request->custo,
+            'custo' => $request->preco * $request->quantidade,
             'preco' => $request->preco,
             'quantidade' => $request->quantidade,
         ]);
 
         return "Produto Editado com Sucesso!";
     }
-    public function delete($id){
-        $produto = Produto::findOrFail($id);
-        return view('produtos.delete',['produto' =>$produto]);
-    }
+
     public function destroy($id){
         $produto = Produto::findOrFail($id);
         $produto->delete();
-
-        return "Produto Excluido com Sucesso!";
+        $produtos = Produto::all();
+        return view('produtos.create',['produtos'=>$produtos]);
 
     }
 }

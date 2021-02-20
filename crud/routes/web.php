@@ -14,18 +14,12 @@ use App\Http\Controllers\ProdutosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/produtos/novo','App\Http\Controllers\ProdutosController@create');
-Route::post('/produtos/novo','App\Http\Controllers\ProdutosController@store')->name('registrar_produto');
-
-Route::get('/produtos/ver/{id}','App\Http\Controllers\ProdutosController@show');
+Route::get('/','App\Http\Controllers\ProdutosController@create');
+Route::post('/','App\Http\Controllers\ProdutosController@store')->name('registrar_produto');
 
 Route::get('/produtos/edit/{id}','App\Http\Controllers\ProdutosController@edit');
 Route::post('/produtos/edit/{id}','App\Http\Controllers\ProdutosController@update')->name('update_produto');
 
-Route::get('/produtos/delete/{id}','App\Http\Controllers\ProdutosController@delete');
 Route::post('/produtos/delete/{id}','App\Http\Controllers\ProdutosController@destroy')->name('delete_produto');
 

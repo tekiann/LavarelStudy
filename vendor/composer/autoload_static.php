@@ -111,6 +111,7 @@ class ComposerStaticInitf88dafc73edcb6bc1a0dbaf6d7243fb3
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Breeze\\' => 15,
         ),
         'I' => 
         array (
@@ -345,6 +346,10 @@ class ComposerStaticInitf88dafc73edcb6bc1a0dbaf6d7243fb3
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laravel\\Breeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
         'Illuminate\\Support\\' => 
         array (

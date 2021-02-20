@@ -1,5 +1,6 @@
 {
     "require": {
-        "laravel/laravel": "^8.5"
+        "laravel/laravel": "^8.5",
+        "laravel/breeze": "^1.1"
     }
 }
