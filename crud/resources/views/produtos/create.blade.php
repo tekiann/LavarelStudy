@@ -15,11 +15,11 @@
         <p>Cadastre e gerencie produtos</p>
         <p><a href="https://8000-aquamarine-wildcat-2hlkb030.ws-us03.gitpod.io/">Produtos</a></p>
 
-        <div class="table-responsive  round">
+        <div class="table-responsive">
 
-            <table class="shadow shadow-md border border-primary table table-dark table-striped table-bordered table-hover">
+            <table class="shadow shadow-md table table-hover table-striped ">
                 <thead>
-                    <tr>
+                    <tr class="table-dark">
                         <th>Nome</th>
                         <th>Preço/Uni</th>
                         <th>Custo total</th>
@@ -49,12 +49,23 @@
                         <td><input class="form-control" type="text" name="preco" value="R${{$produto->preco}}" readonly></td>
                         <td><input class="form-control" type="text" name="custo" value="R${{$produto->custo}}" readonly></td>
                         <td><input class="form-control" type="text" name="quantidade" value="{{$produto->quantidade}}" readonly></td>
-                        <td><button class="btn btn-warning btn-block"><a href="https://8000-aquamarine-wildcat-2hlkb030.ws-us03.gitpod.io/produtos/edit/{{$produto->id}}">Editar</a></button></td>
+                        <td><button data-toggle="collapse" data-target="#update{{$produto->id}}" class="btn btn-warning btn-block">Editar</button></td>
                         <form action="{{ route('delete_produto', ['id' => $produto->id]) }}" method="POST">
                             @csrf
                             <td><button class="btn btn-danger btn-block">Deletar</button></td>
                         </form>
+                        <form action="{{ route('update_produto', ['id' => $produto->id]) }}" method="POST">
+                        <tr id="update{{$produto->id}}" class="collapse table-primary">
+                            @csrf
+                            <td><input class="form-control" type="text" name="nome" value="{{$produto->nome}}"></td>
+                            <td><input class="form-control" type="text" name="preco" value="{{$produto->preco}}"></td>
+                            <td><input class="form-control" type="text" name="custo" value="{{$produto->custo}}" readonly></td>
+                            <td><input class="form-control" type="text" name="quantidade" value="{{$produto->quantidade}}"></td>
+                            <td><button class="btn btn-success btn-block">Salvar</button></td>
+                            <td>
 
+                        </tr>
+                        </form>
 
                     </tr>
                     @endforeach

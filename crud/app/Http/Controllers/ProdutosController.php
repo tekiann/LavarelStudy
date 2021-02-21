@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class ProdutosController extends Controller
 {
@@ -20,18 +21,10 @@ class ProdutosController extends Controller
             'quantidade' => $request->quantidade,
         ]);
 
-        $produtos = Produto::all();
-        return view('produtos.create',['produtos'=>$produtos]);
+        return redirect()->action([ProdutosController::class, 'create']);
 
     }
-    public function show($id){
-        $produto = Produto::findOrFail($id);
-        return view('produtos.show',['produto' =>$produto]);
-    }
-    public function edit($id){
-        $produto = Produto::findOrFail($id);
-        return view('produtos.edit',['produto' =>$produto]);
-    }
+
     public function update(Request $request,$id){
 
         $produto = Produto::findOrFail($id);
@@ -43,14 +36,13 @@ class ProdutosController extends Controller
             'quantidade' => $request->quantidade,
         ]);
 
-        return "Produto Editado com Sucesso!";
+        return redirect()->action([ProdutosController::class, 'create']);
     }
 
     public function destroy($id){
         $produto = Produto::findOrFail($id);
         $produto->delete();
-        $produtos = Produto::all();
-        return view('produtos.create',['produtos'=>$produtos]);
+        return redirect()->action([ProdutosController::class, 'create']);
 
     }
 }

@@ -17,9 +17,6 @@ use App\Http\Controllers\ProdutosController;
 
 Route::get('/','App\Http\Controllers\ProdutosController@create');
 Route::post('/','App\Http\Controllers\ProdutosController@store')->name('registrar_produto');
-
-Route::get('/produtos/edit/{id}','App\Http\Controllers\ProdutosController@edit');
 Route::post('/produtos/edit/{id}','App\Http\Controllers\ProdutosController@update')->name('update_produto');
-
 Route::post('/produtos/delete/{id}','App\Http\Controllers\ProdutosController@destroy')->name('delete_produto');
 
