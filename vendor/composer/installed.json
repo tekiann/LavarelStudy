@@ -1081,17 +1081,17 @@
     },
     {
         "name": "laravel/laravel",
-        "version": "v8.5.10",
-        "version_normalized": "8.5.10.0",
+        "version": "v8.5.14",
+        "version_normalized": "8.5.14.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/laravel.git",
-            "reference": "ebf2646c347b941e63709f7e69ab79416f6d5124"
+            "reference": "57ddc0ebbb1cdc778e301016b643769d1f96e2e1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/laravel/zipball/ebf2646c347b941e63709f7e69ab79416f6d5124",
-            "reference": "ebf2646c347b941e63709f7e69ab79416f6d5124",
+            "url": "https://api.github.com/repos/laravel/laravel/zipball/57ddc0ebbb1cdc778e301016b643769d1f96e2e1",
+            "reference": "57ddc0ebbb1cdc778e301016b643769d1f96e2e1",
             "shasum": ""
         },
         "require": {
@@ -1110,7 +1110,7 @@
             "nunomaduro/collision": "^5.0",
             "phpunit/phpunit": "^9.3.3"
         },
-        "time": "2021-02-16T16:58:35+00:00",
+        "time": "2021-03-16T16:26:11+00:00",
         "type": "project",
         "extra": {
             "laravel": {
