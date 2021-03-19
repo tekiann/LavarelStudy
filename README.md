@@ -1,3 +1,6 @@
 # Laravel-Crud
 
-If you're crazy enough to try to understand this do not forget to change the .env files to your config
+>cd crud
+>composer update
+>php artisan migrate
+>php artisan serve
